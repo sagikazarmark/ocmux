@@ -14,6 +14,23 @@ $ go get github.com/sagikazarmark/ocmux
 ```
 
 
+## Usage
+
+```go
+package main
+
+import (
+	"github.com/gorilla/mux"
+	"github.com/sagikazarmark/ocmux"
+)
+
+func main() {
+	router := mux.NewRouter()
+	router.Use(ocmux.Middleware())
+}
+```
+
+
 ## Attribution
 
 Based on the work of [@basvanbeek](https://github.com/basvanbeek): https://github.com/basvanbeek/opencensus-gorilla_mux-example
