@@ -27,11 +27,6 @@ jobs:
         steps:
             - checkout
 
-            -   restore_cache:
-                    name: Restore build dependencies
-                    keys:
-                        - build-deps-v1-{{ .Branch }}-{{ checksum "Makefile" }}
-
             -   run:
                     name: Run tests
                     command: |
@@ -41,12 +36,6 @@ jobs:
                         fi
 
                         make test
-
-            -   save_cache:
-                    name: Save build dependencies
-                    key: build-deps-v1-{{ .Branch }}-{{ checksum "Makefile" }}
-                    paths:
-                        - bin/
 
             -   store_test_results:
                     path: build/test_results/
