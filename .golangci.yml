@@ -6,3 +6,8 @@ linters:
 linters-settings:
     golint:
         min-confidence: 0.1
+    goimports:
+        local-prefixes: github.com/sagikazarmark/ocmux
+
+service:
+    golangci-lint-version: 1.17.x
