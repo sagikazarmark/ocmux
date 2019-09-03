@@ -33,10 +33,6 @@ jobs:
                         - build-deps-v1-{{ .Branch }}-{{ checksum "Makefile" }}
 
             -   run:
-                    name: Download Go module cache
-                    command: go mod download
-
-            -   run:
                     name: Run tests
                     command: |
                         if [ $CIRCLE_NODE_TOTAL -gt 1 ]; then
